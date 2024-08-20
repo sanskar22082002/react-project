@@ -11,7 +11,11 @@ function useForm(initialValues) {
     }));
   }, []);
 
-  return [values, handleChange];
+  const resetForm = useCallback(() => {
+    setValues(initialValues);
+  }, [initialValues]);
+
+  return [values, handleChange, resetForm];
 }
 
 export default useForm;
