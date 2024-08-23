@@ -1,18 +1,15 @@
 import React from 'react';
 import useForm from '../hooks/useForm';
 
-function AlumniLogin({ setPage }) {
-  const [values, handleChange] = useForm({ uid: '', password: '' });
+function AdminLogin({ setPage }) {
+  const [values, handleChange] = useForm({ userId: '', password: '' });
 
   const handleLogin = () => {
-    // Validate if both fields are filled
-    if (values.uid.trim() === '' || values.password.trim() === '') {
-      alert('Both UID and Password are required.');
+    if (values.userId.trim() === '' || values.password.trim() === '') {
+      alert('Both User ID and Password are required.');
       return;
     }
-
-    // Authentication logic here
-    setPage('AlumniDetails');
+    setPage('AdminEntry');
   };
 
   const handleHome = () => {
@@ -30,13 +27,13 @@ function AlumniLogin({ setPage }) {
         </button>
       </header>
       <div className="text-center py-20">
-        <h2 className="text-2xl font-bold">Alumni Login</h2>
+        <h2 className="text-2xl font-bold">Admin Login</h2>
         <div className="mt-8">
-          <label className="block text-left">UID:</label>
+          <label className="block text-left">User ID:</label>
           <input
-            name="uid"
+            name="userId"
             type="text"
-            value={values.uid}
+            value={values.userId}
             onChange={handleChange}
             className="input border-gray-300 rounded p-2"
             required
@@ -62,4 +59,4 @@ function AlumniLogin({ setPage }) {
   );
 }
 
-export default AlumniLogin;
+export default AdminLogin;

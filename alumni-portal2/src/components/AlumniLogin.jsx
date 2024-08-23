@@ -11,8 +11,8 @@ function AlumniLogin({ setPage }) {
       return;
     }
 
-    // Authentication logic here
-    setPage('AlumniDetails');
+    // Redirect to AlumniOptions page after successful login
+    setPage('AlumniOptions');
   };
 
   const handleHome = () => {
